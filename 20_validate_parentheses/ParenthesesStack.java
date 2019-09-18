@@ -51,5 +51,4 @@ public class ParenthesesStack {
         boolean res = new ParenthesesStack().isValid(test);
         System.out.println(res);
     }
-
 }
