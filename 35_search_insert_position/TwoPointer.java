@@ -10,7 +10,7 @@
  */
 
 public class TwoPointer {
-    public int searchInseart(int[] nums , int target) {
+    public int searchInsert(int[] nums , int target) {
         if (nums.length == 0) {
             return 0;
         }
@@ -48,22 +48,22 @@ public class TwoPointer {
     public static void main(String[] args) {
         int[] nums1 = {1, 2, 3, 4};
         int target1 = 2;
-        int res1 = new TwoPointer().searchInseart(nums1, target1);
+        int res1 = new TwoPointer().searchInsert(nums1, target1);
         assert 1 == res1;
 
         int[] nums2 = {1, 2, 3};
         int target2 = 4;
-        int res2 = new TwoPointer().searchInseart(nums2, target2);
+        int res2 = new TwoPointer().searchInsert(nums2, target2);
         assert 3 == res2;
 
         int[] nums3 = {1, 2, 5, 5};
         int target3 = 4;
-        int res3 = new TwoPointer().searchInseart(nums3, target3);
+        int res3 = new TwoPointer().searchInsert(nums3, target3);
         assert 2 == res3;
 
         int[] nums4 = {1, 3, 5, 6};
         int target4 = 2;
-        int res4 = new TwoPointer().searchInseart(nums4, target4);
+        int res4 = new TwoPointer().searchInsert(nums4, target4);
         assert 1 == res4;
     }
 }
