@@ -13,7 +13,6 @@ public class BinarySearch {
         int b = x;
         while (b > a) {
             int mid = a + (b-a) / 2;
-            System.out.println(mid);
             if (compare(mid, x) == 0) {
                 return mid;
             }
@@ -29,7 +28,7 @@ public class BinarySearch {
 
     private int compare(int num, int x) {
         // check is num is larger, smaller or equal to sqrt(x)
-        if (num == x/num || ((num * num < x) && ((num+1) * (num+1) > x))) {
+        if (num <= x/num && (num+1 > x/(num+1))) {
             return 0;
         }
         else if (num > x/num) {
@@ -40,12 +39,11 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         BinarySearch bs = new BinarySearch();
-        // System.out.println(bs.mySqrt(4));
-        // System.out.println(bs.mySqrt(6));
-        // System.out.println(bs.mySqrt(10));
-        // System.out.println(bs.mySqrt(2));
-        // System.out.println(bs.mySqrt(2147395599));
-        System.out.println(2147395599);
+        System.out.println(bs.mySqrt(4));
+        System.out.println(bs.mySqrt(6));
+        System.out.println(bs.mySqrt(10));
+        System.out.println(bs.mySqrt(2));
+        System.out.println(bs.mySqrt(2147395599));
 
     }
 }
