@@ -54,7 +54,7 @@ public class SimpleAddition {
     private ListNode add_one_to_list(ListNode l, int carry) {
         // deal with the case of adding a linked list with an integer
         ListNode head = l;
-        while (carry == 1 && l != null) {
+        while (carry == 1 && l.next != null) {
             if (l.val == 9) {
                 l.val = 0;
                 carry = 1;
@@ -65,18 +65,24 @@ public class SimpleAddition {
                 carry = 0;
             }
         }
-        if (carry == 1) l = new ListNode(1);
+        if (carry == 1 && l.val == 9) {
+            l.val = 0;
+            l.next = new ListNode(1);
+        }
+        else if (carry == 1) {
+            l.val += 1;
+        }
         return head;
     }
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(3);
-        // l1.next = new ListNode(4);
-        // l1.next.next = new ListNode(5);
+        l1.next = new ListNode(4);
+        l1.next.next = new ListNode(5);
 
         ListNode l2 = new ListNode(7);
         l2.next = new ListNode(9);
-        // l2.next.next = new ListNode(9);
+        l2.next.next = new ListNode(9);
 
         ListNode res = new SimpleAddition().addTwoNumbers(l1, l2);
         while (res != null) {
